@@ -5,9 +5,6 @@
     <title>Duluth Points of Interest</title>
     <meta charset="utf-8">
     
-    <! -- Leaflet CSS Latest Version on September 3, 2020; source: webdev2 assignment GIS 4533 -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    
     <! -- Referencing to Mapbox GL, source: https://docs.mapbox.com/mapbox-gl-js/api/ -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
@@ -29,13 +26,6 @@
 <body>
     <div id="map"></div>
     
-    <! -- Leaflet Omnivore 0.3.1; source: webdev2 assignment GIS 4533 -->
-        <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
-        </script>
-    
-    <! -- Leaflet JS Latest Version on September 3, 2020; source: webdev2 assignment GIS 4533 -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
     <script>
         // Loading mapbox basemap (style + Duluth POI) and setting map view, adapted from source: https://docs.mapbox.com/mapbox-gl-js/api/ 
         mapboxgl.accessToken = 'pk.eyJ1IjoiamF2aW1hY2F5YSIsImEiOiJja2ZpZndjMDgwOGFyMnBrdXIxbTlhNzhwIn0.dY2Ij8lB1KyP28WBXthpCg';
@@ -44,9 +34,7 @@
             style: 'mapbox://styles/javimacaya/ckhc542p507hz1apr60uavbfb',
             center: [-92.165, 46.742],
             zoom: 10.65
-        }).addTo(map);
-        
-        
+        }).addTo(map);   
     </script>
 </body>
     
