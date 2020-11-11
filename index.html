@@ -34,7 +34,135 @@
             style: 'mapbox://styles/javimacaya/ckhc542p507hz1apr60uavbfb',
             center: [-92.165, 46.742],
             zoom: 10.65
-        }).addTo(map);   
+        }).addTo(map);
+        
+        // Creating Popups for Duluth POI, source: https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
+        //Load GeoJSON data
+        var geojson = {
+            type: 'FeatureCollection',
+            features: [{
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.09403, 46.78244]
+                },
+                properties: {
+                    title: 'Canal Park',
+                    description: 'Canal Park is a tourist and recreation-oriented district of Duluth, Minnesota, United States. Situated across the Interstate 35 freeway from Downtown Duluth, it is connected by the famous Aerial Lift Bridge to the Park Point sandbar and neighborhood.'
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.09289, 46.778973]
+                },
+                properties: {
+                    title: 'Aerial Lift Bridge',
+                    description: 'The Aerial Lift Bridge is a landmark in the port city of Duluth, Minnesota. The span began life in 1905 as the United States first transporter bridge. In 1929-1930, the span was converted to a vertical lift bridge, and continues to operate today.'
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.21723, 46.71926]
+                },
+                properties: {
+                    title: 'Spirit Mountain Recreation Area',
+                    description: 'Recreational mountain featuring wintertime downhill skiing & a summertime adventure park.'         
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.05175, 46.81517]
+                },
+                properties: {
+                    title: 'Glensheen',
+                    description: 'Glensheen, the Historic Congdon Estate is a 20,000 square foot mansion in Duluth, Minnesota, United States, operated by the University of Minnesota Duluth as a historic house museum.'         
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.1001, 46.779]
+                },
+                properties: {
+                    title: 'Great Lakes Aquarium',
+                    description: 'The Great Lakes Aquarium opened in 2000 and is located on the Duluth waterfront. A 501 private nonprofit, its mission is to inspire people to explore their connection to Lake Superior and waters of the world.'         
+                }    
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.3468, 46.6514]
+                },
+                properties: {
+                    title: 'Jay Cooke State Park',
+                    description: 'Jay Cooke State Park is a state park of Minnesota, United States, protecting the lower reaches of the St. Louis River. The park is located about 10 miles southwest of Duluth and is one of the ten most visited state parks in Minnesota. The western half of the park contains part of a rocky, 13-mile gorge.'         
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.10437, 46.78108]
+                },
+                properties: {
+                    title: 'North Shore Scenic Railroad',
+                    description: 'Seasonal narrated train tours follow a historic transport corridor for short, long & themed rides.'         
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.1246, 46.7773]
+                },
+                properties: {
+                    title: 'Enger Park',
+                    description: 'Attraction featuring a stone tower with panoramic views, a Japanese peace garden & walking paths.'         
+                }
+                },
+                 {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.08447, 46.81854]
+                },
+                properties: {
+                    title: 'Tweed Museum of Art',
+                    description: 'The Tweed Museum of Art is a museum on the campus of the University of Minnesota Duluth, in Duluth, Minnesota, United States.'         
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.08072, 46.79783]
+                },
+                properties: {
+                    title: 'Rose Garden',
+                    description: 'Duluth Rose Garden is a 4.5 acre portion of Leif Erikson Park located at the foot of 13th Avenue East. Directly accessible from the Lakewalk, the Rose Garden features over 3,000 rose bushes and other plants, a statue of Leif Erikson, the Stone Memorial Fountain, and a gazebo that has provided the location for many weddings.'         
+                }
+                },
+                {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-92.0915, 46.7902]
+                },
+                properties: {
+                    title: 'Lakewalk',
+                    description: 'The Duluth Lakewalk is famous and well-known to all who have visited Canal Park, Duluth Minnesota. In fact, it has a 5-star rating on TripAdvisor and is listed as the #2 thing to do in Duluth. Loved by locals and tourists alike, the Duluth Lakewalk is a relaxing location to stroll along the shore of Lake Superior. Despite popular belief, the lakewalk is actually much longer than the often announced 3 (or 4.2) mile-length. In fact, the Duluth Lakewalk stretches from Bayfront Festival Park, all the way to 61st Avenue East (just below Lester Park and just above Brighton Beach); a rough distance of 7.25 miles!'         
+                }
+                },       
+            ];
+        };
     </script>
 </body>
     
