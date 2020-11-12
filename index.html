@@ -34,9 +34,25 @@
             style: 'mapbox://styles/javimacaya/ckhc542p507hz1apr60uavbfb',
             center: [-92.165, 46.742],
             zoom: 10.65
-        }).addTo(map);
+        });
         
-        
+        // Creating Popups for Duluth POI, adapted from source: https://docs.mapbox.com/help/tutorials/add-points-pt-3/
+        map.on('click', function(e) {
+            var features = map.queryRenderedFeatures(e.point, {
+                layers: ['duluth-points-of-interest'] // replace this with the name of the layer
+            });
+
+            if (!features.length) {
+                return;
+            }
+
+            var feature = features[0];
+
+            var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                .setLngLat(feature.geometry.coordinates)
+            .setHTML('<h3>' + feature.properties.Attraction + '</h3><p>' + feature.properties.Address + '</p><a href="feature.properties.Website">' + feature.properties.Website + '</a><p>' + feature.properties.Description + '</p><img src="feature.properties.PhotoURL" alt="" style="width:60px;height:60px;">' + feature.properties.PhotoURL)
+                .addTo(map);
+        });
     </script>
 </body>
     
