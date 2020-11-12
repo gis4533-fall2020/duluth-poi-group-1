@@ -91,7 +91,7 @@
             
                 // Solved issue with links not working in popups, source:https://gis.stackexchange.com/questions/279205/how-to-add-links-to-popups-in-mapbox-gl-js
                 .setHTML('<h3>' + feature.properties.Attraction + '</h3><p>' + feature.properties.Address + '</p><p><a href="' + 
-                feature.properties.Website + '" target="_blank">' + feature.properties.Website + '</a></p>' + feature.properties.Description + '</p><img src="feature.properties.Photo_URL" alt="" style="width:60px; height:60px;">' + feature.properties.Photo_URL)
+                feature.properties.Website + '" target="_blank">' + feature.properties.Website + '</a></p><p>' + feature.properties.Description + '</p><img src="' + feature.properties.PhotoURL + '" alt="" style="width:100px; height:100px;">')
                 .addTo(map);
         });
     </script>
