@@ -19,11 +19,41 @@
             height: 100%;
             width: 100%;
         }
+        
+        
+        /* Styling the information panel, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1-floatingpanel.html */
+        .floating-panel {
+            width: 160px; /* Set the width of the sidebar */
+            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+            z-index: 9999;
+            bottom: 200px;
+            right: 20px;
+            /* Black with some transparency */
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;    /* some nice rounded corners */
+            padding: 10px;
+            margin: 20px;
+            /* Text color */
+            color: red;
+        }
+
+        /* The navigation menu links */
+        .floating-panel * {
+/*            padding: 6px 8px 6px 16px;*/
+            text-decoration: none;
+            display: block;
+        }
     </style>
 
 </head>
     
 <body>
+    <! -- Information Panel, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1-floatingpanel.html -->
+    <nav class="floating-panel">
+        <h4>Click on the main attractions (marked as red) for some information</h4>
+        <h4>There are more main attractions when zooming in</h4>
+    </nav>
+    
     <! -- Styling popups, adapted from source: https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/ -->
     <style>
         .mapboxgl-popup {
