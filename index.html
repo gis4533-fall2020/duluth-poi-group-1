@@ -5,7 +5,7 @@
     <title>Duluth Points of Interest</title>
     <meta charset="utf-8">
     
-    <! -- Referencing to Mapbox GL, source: https://docs.mapbox.com/mapbox-gl-js/api/-- >
+    <! -- Referencing to Mapbox GL, source: https://docs.mapbox.com/mapbox-gl-js/api/ -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     
@@ -24,17 +24,43 @@
 </head>
     
 <body>
+    <! -- Styling popups, adapted from source: https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/ -->
+    <style>
+        .mapboxgl-popup {
+            min-width: 310px;
+            max-width: 400px;
+            font: 12px/20px 'Arial', Helvetica, sans-serif;
+}
+    </style>
     <div id="map"></div>
     
     <script>
-        // Loading mapbox basemap (style + Duluth POI) and setting map view, source: https://docs.mapbox.com/mapbox-gl-js/api/ 
+        // Loading mapbox basemap (style + Duluth POI) and setting map view, adapted from source: https://docs.mapbox.com/mapbox-gl-js/api/ 
         mapboxgl.accessToken = 'pk.eyJ1IjoiamF2aW1hY2F5YSIsImEiOiJja2ZpZndjMDgwOGFyMnBrdXIxbTlhNzhwIn0.dY2Ij8lB1KyP28WBXthpCg';
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/javimacaya/ckhc542p507hz1apr60uavbfb',
             center: [-92.165, 46.742],
             zoom: 10.65
-        }).addTo(map);
+        });
+        
+        // Creating Popups for Duluth POI, adapted from source: https://docs.mapbox.com/help/tutorials/add-points-pt-3/
+        map.on('click', function(e) {
+            var features = map.queryRenderedFeatures(e.point, {
+                layers: ['duluth-points-of-interest'] // replace this with the name of the layer
+            });
+
+            if (!features.length) {
+                return;
+            }
+
+            var feature = features[0];
+
+            var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                .setLngLat(feature.geometry.coordinates)
+            .setHTML('<h3>' + feature.properties.Attraction + '</h3><p>' + feature.properties.Address + '</p><a href="feature.properties.Website">' + feature.properties.Website + '</a><p>' + feature.properties.Description + '</p><img src="feature.properties.Photo_URL" alt="" style="width:60px; height:60px;">' + feature.properties.Photo_URL)
+                .addTo(map);
+        });
     </script>
 </body>
     
