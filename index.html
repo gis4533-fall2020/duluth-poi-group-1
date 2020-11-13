@@ -21,6 +21,12 @@
             width: 100%;
         }
         
+        /* Fix map height, source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev3.html */
+        #map {
+            height: calc(100vh - 60px);
+            top: 60px;
+        }
+        
         /* Styling the information panel, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1-floatingpanel.html */
         .floating-panel {
             width: 160px; /* Set the width of the sidebar */
@@ -123,7 +129,7 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/javimacaya/ckhc542p507hz1apr60uavbfb',
-            center: [-92.165, 46.742],
+            center: [-92.165, 46.740],
             zoom: 10.65
         });
         
