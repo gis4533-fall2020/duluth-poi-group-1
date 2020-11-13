@@ -16,10 +16,10 @@
             margin: 0;
         }
         html, body, #map {
+            top: 60px;
             height: 100%;
             width: 100%;
         }
-        
         
         /* Styling the information panel, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1-floatingpanel.html */
         .floating-panel {
@@ -39,20 +39,67 @@
 
         /* The navigation menu links */
         .floating-panel * {
-/*            padding: 6px 8px 6px 16px;*/
+            padding: 6px 8px 6px 16px;
             text-decoration: none;
             display: block;
+        }
+        
+        /* Styling the header, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1.html */
+        #header {
+            /* positions at the top of the page */
+            top: 0;
+            /* make it full width */
+            width: 100%;
+            /* make it visible on top of the map */
+            z-index: 999999;
+            /* fixed position within <body> */
+            position: fixed;
+            /* note that the map is positioned this far from the top of the
+            page*/
+            height: 60px;
+            /* white text */
+            color: white;
+            /* green background */
+            background-color: green;
+            /* some spacing */
+            padding-left: 20px;
+            /* my attempt at not overlapping the map*/
+            overflow: hidden;
+            /* different font */
+            font-family: Helvetica, sans-serif;
+        }
+        /* header children styling */
+        #header * {
+            /* put everything on the same line */
+            display: inline-block;
+            margin-right: 40px;
+            margin-top: 10px;
+        }
+        /* bring items to the right */
+        .right {
+            float: right;
+        }
+        /* link or anchor tag(<a>) styling */
+        a {
+            color: coral;
+        }
+        /* put this text in line with other text in header */
+        #header h1, h4 {
+            margin-bottom: 20px;
+            margin-top: 10px;
         }
     </style>
 
 </head>
     
 <body>
+    <! -- Adding Header, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1.html --> 
     <header id="header">
-        <img src="logo-fdi120.png"  style="width: 90px; height:50px;">
-        <h2>The Beautiful City of Duluth</h2>
+        <img src="logo-fdi120.png"  style="width: 60px; height: 40px;">
+        <h1><b>The Beautiful City of Duluth</b></h1>
         <h4><a href="https://www.fdiworlddental.org/what-we-do/fdi-world-dental-congress" target="_blank">FDI World Dental Congress - Duluth, Minnesota, United States 2021</a></h4>
     </header>
+    
     <! -- Information Panel, adapted from source: view-source:https://kristofj-umd.github.io/webdev-f19/assignments/webdev1-floatingpanel.html -->
     <nav class="floating-panel">
         <h4>Click on the main attractions (marked in red) for some information</h4>
@@ -67,6 +114,7 @@
             font: 12px/20px 'Arial', Helvetica, sans-serif;
 }
     </style>
+    
     <div id="map"></div>
     
     <script>
